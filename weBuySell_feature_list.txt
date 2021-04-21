@@ -1,0 +1,28 @@
+Group Project Proposal
+
+Project name : weBuySell
+
+Wireframe : see attachment
+
+Feature List:
+
+Must-Haves:
+User Registration / Login
+Dashboard
+Product page
+Edit Product (for Seller only)
+User willing to buy
+Can see seller’s info if commit to buy or negotiate
+Search by Product Name
+User Profile
+Edit
+Add Product
+
+Nice-to-Haves:
+Direct message to Seller from Buyer
+Seller can see Buyers’ info
+Upload product picture
+
+
+Description:
+Users can register themselves into this app and allow them to sell or buy some stuff like an online marketplace. 
