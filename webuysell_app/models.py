@@ -7,7 +7,7 @@ class UserManager(models.Manager):
     def register_validator(self, postData):
         errors = {}
         if len(postData['first_name']) < 2:
-            errors['last_name'] = "Name must be at least 2 characters long."
+            errors['first_name'] = "Name must be at least 2 characters long."
         if len(postData['last_name']) < 2:
             errors['last_name'] = "Name must be at least 2 characters long."
         if len(postData['password']) < 8:
@@ -53,6 +53,31 @@ class User(models.Model):
     profile_pic = models.ImageField(null=True, blank=True, upload_to='images')
 
     objects = UserManager()
+
+
+class ProductManager(models.Manager):
+    def product_validator(self, postData):
+        errors = {}
+        
+        #product_name
+        if len(postData['product_name']) == 0:
+            errors['product_name_blank'] = 'Product name cannot be blank.'
+        elif len(postData['product_name']) < 2:
+            errors['product_name_short'] = 'Product name cannot be less than 2 characters.'
+        
+        #condition
+        if len(postData['condition']) == 0:
+            errors['condition_blank'] = 'Condition cannot be blank.'
+        elif len(postData['condition']) < 2:
+            errors['condition_short'] = 'Condition should be at least 3 characters long.'
+
+        #price
+        if len(postData['price']) == 0:
+            errors["price_blank"] = "You want some money at least"
+        
+        #negotiation
+        if len(postData["negotiation"]) == 0;
+            errors["negotiation_blank"] = "Please say Yes or No"
 
 
 class Product(models.Model):
