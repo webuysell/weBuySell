@@ -53,3 +53,13 @@ class User(models.Model):
     profile_pic = models.ImageField(null=True, blank=True, upload_to='images')
 
     objects = UserManager()
+
+
+class Product(models.Model):
+    product_name = models.CharField(max_legnth=255)
+    condition = models.CharField(max_length=55)
+    price = models.CharField(max_length=25)
+    negotiation = models.CharField(max_length=25)
+    seller = models.ForeignKey(User, related_name="owner", on_delete=models.CASCADE)
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
