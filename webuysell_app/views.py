@@ -76,3 +76,4 @@ def add_product (request):
             messages.success (request, "Product added successfully!!")
 
     return redirect ("/add_product")
+    
