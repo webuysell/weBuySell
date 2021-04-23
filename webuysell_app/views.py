@@ -57,3 +57,23 @@ def product (request, product_id):
     }
 
     return render (request, "product.html", context)
+
+def add_product (request):
+    if request.method == "POST":
+        errors = Product.objects.product_validator(request.POST)
+        if len(errors) > 0 :
+            for key, value in errors.items():
+                messages.error(request, value)
+
+        else:
+            product = Product.objects.create(
+                product_name = request.POST["product_name"],
+                condition = request.POST["condition"],
+                price = request.POSt["price"],
+                negotiation = request.POST["negotiation"],
+
+            )
+            messages.success (request, "Product added successfully!!")
+
+    return redirect ("/add_product")
+    
