@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Product</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/#">Dashboard</a>
+            <a class="navbar-brand" href="/#">Search</a>
+            <a class="navbar-brand" href="/#">Sell</a>
+            <a class="navbar-brand" href="/#">Account</a>
+            <a class="navbar-brand" href="/#">Logout</a>
+        </nav>
+
+        <div class="product_info">
+            <h1>Product Deatil</h1>
+            <p>Product Name: {{this_product.product_name}} </p>
+            <p>Condition : {{this_product.condition}} </p>
+            <p>Price : {{this_product.price}} </p>
+            <p>Negotiable : {{this_product.negotiation}} </p>
+            <p>Seller : <a href="#"> {{this_product.seller}} </a></p>
+            
+        </div>
+    </div>
+</body>
+</html>
