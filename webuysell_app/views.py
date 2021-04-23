@@ -48,3 +48,12 @@ def login(request):
         messages.error(request, "Email for password are not right")
 
     return redirect('/')
+
+def product (request, product_id):
+    context = {
+        "this_user" : User.objects.get(id=request.session["user_id"]),
+        "this_product" : Product.objects.get(id=product_id),
+        "all_product" : Product.objects.all(),
+    }
+
+    return render (request, "product.html", context)
