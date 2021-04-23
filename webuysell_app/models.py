@@ -79,6 +79,8 @@ class ProductManager(models.Manager):
         if len(postData["negotiation"]) == 0;
             errors["negotiation_blank"] = "Please say Yes or No"
 
+        return errors
+
 
 class Product(models.Model):
     product_name = models.CharField(max_legnth=255)
